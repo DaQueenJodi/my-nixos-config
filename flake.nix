@@ -3,7 +3,7 @@
     nixpkgs.url = "nixpkgs/nixos-22.05";
 
     dwm = {
-      url = "github:maddiethecafebabe/dwm";
+      url = "github:DaQueenJodi/dwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
