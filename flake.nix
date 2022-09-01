@@ -21,7 +21,7 @@
         inherit system;
 
         modules = [
-          ./hosts/localhost/configuration.nix
+          ./configuration.nix
           ./modules
         ];
 
