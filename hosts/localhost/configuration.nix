@@ -52,7 +52,6 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
-    hello-unfree
   ];
   # NETWORKING
   boot.extraModulePackages = with config.boot.kernelPackages; [
