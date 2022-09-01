@@ -1,8 +1,3 @@
-
-  
-
-  {
-
-    nix.settings.experimental-features = [ "nix-command" "flakes"  ];
-    options.modules.wm.dwm.enable = true;
-  }
+{
+   options.modules.wm.dwm.enable = true;
+}
