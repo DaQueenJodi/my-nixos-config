@@ -26,9 +26,8 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  # use window managers
-  services.xserver.windowManager.bspwm.enable = true;
+  modules.wm.dwm.enable = true;
+
 
   # HARDWARE
 
@@ -44,12 +43,17 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jodi = {
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager"];
+    extraGroups = ["wheel"]; 
+    packages = with pkgs; [
+      firefox
+    ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    rofi
+    alacritty
     vim
     wget
   ];
