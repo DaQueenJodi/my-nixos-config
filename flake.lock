@@ -7,15 +7,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1661992302,
+        "lastModified": 1661992436,
         "narHash": "sha256-h4XxfJivq/f4Pe2X4gJNnMuQ9ukNjfYx7twDnRmsFfI=",
-        "owner": "maddiethecafebabe",
+        "owner": "daqueenjodi",
         "repo": "dwm",
-        "rev": "c0b077677e1b9b64bce4e87bf92af6db007ac15f",
+        "rev": "d3a0e7d7ebecb3b3648703ecdd5955a7618b5588",
         "type": "github"
       },
       "original": {
-        "owner": "maddiethecafebabe",
+        "owner": "daqueenjodi",
         "repo": "dwm",
         "type": "github"
       }
