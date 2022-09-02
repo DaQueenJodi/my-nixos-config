@@ -35,6 +35,7 @@
           inherit inputs;
 
           dwm = inputs.dwm.packages.${system}.dwm;
+          st  = inputs.st.packages.${system}.st;       
         };
       };
     };
