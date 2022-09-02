@@ -6,7 +6,13 @@
       url = "github:daqueenjodi/dwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    st = {
+      url = "github:daqueenjodi/st";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
+
 
   outputs = inputs @ {
     self,

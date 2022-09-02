@@ -46,16 +46,17 @@
     extraGroups = ["wheel"]; 
     packages = with pkgs; [
       firefox
+      
     ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    rofi
-    alacritty
-    vim
+    st
     wget
+    curl
+    fish
   ];
   # NETWORKING
   boot.extraModulePackages = with config.boot.kernelPackages; [
