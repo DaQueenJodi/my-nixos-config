@@ -25,7 +25,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   modules.wm.dwm.enable = true;
-
+  
 
   # HARDWARE
 
@@ -49,26 +49,24 @@
       nix-index
       pulsemixer
       bat
+      ranger
     ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    alacritty
-    fish
-    tdrop
-    xclip
-    rofi
-    picom
-    openvpn
-    pamixer
-    killall
-    git
-    gh
-    cava
-    dash
-    nodejs # for neovim
+    alacritty # terminal
+    tdrop # terminal dropdown
+    xclip # clipboard
+    rofi # launcher
+    picom # compositor
+    openvpn # vpn stuffs
+    pamixer # changing volume
+    killall # killing windows
+    git 
+    cava # for bar
+    dash # for launchers
   ];
   # NETWORKING
   boot.extraModulePackages = with config.boot.kernelPackages; [
@@ -99,9 +97,6 @@
     fira-code-symbols
   ];
 
-  programs.neovim.enable = true;
-  programs.neovim.viAlias = true;
-
   # FLATPAK
   xdg.portal = {
     enable = true;
@@ -111,6 +106,16 @@
   };
 
   services.flatpak.enable = true;
+
+
+
+ # MODULE ENABLING
+ modules.editor.neovim.enable = true;
+
+
+
+
+
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

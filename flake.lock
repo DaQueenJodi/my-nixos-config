@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1662216666,
-        "narHash": "sha256-gpLP47o40241NqHMaPd343MNmzCrxKNU+fSX1QMunUs=",
+        "lastModified": 1662217491,
+        "narHash": "sha256-Yw7c5Cppqfcm4gLERondRZ+SbgzYf9i+Wlyn5RulHJc=",
         "owner": "daqueenjodi",
         "repo": "dwm",
-        "rev": "789154009d2165a8127021d69d14ad8be84a8d48",
+        "rev": "ac90d8f8d001041cfd6a2713617e8a9e0ad7295a",
         "type": "github"
       },
       "original": {

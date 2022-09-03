@@ -2,5 +2,6 @@
   imports = [
     ./hardware
     ./wm
+    ./editor
   ];
 }
