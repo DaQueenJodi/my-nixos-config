@@ -9,17 +9,14 @@
   in {
     options.modules.editors.neovim.enable = mkEnableOption "neovim";
 
-    config = mkMerge [
-      {
-        users.users.jodi.packages = with pkgs; [
+    config = mkIf cfg.enable {
+      environment.systemPackages =  with pkgs; [
           neovim
           nodejs
           clang-tools
         ];
-      }
-    ]
     # make neovim the default editor
-    environment.variables.EDITOR = (mkOverride 900 "nvim");
-
+    environment.variables.EDITOR = mkOverride 900 "nvim";
+    };
   }
 
