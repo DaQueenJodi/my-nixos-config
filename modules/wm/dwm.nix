@@ -22,6 +22,7 @@ in {
         {
           name = "dwm";
           start = ''
+            ~/.on_start_dwm &
             dwm &
             waitPID=$!
           '';

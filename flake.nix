@@ -7,11 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    st = {
-      url = "github:daqueenjodi/st";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
+ };
 
 
   outputs = inputs @ {
@@ -35,7 +31,6 @@
           inherit inputs;
 
           dwm = inputs.dwm.packages.${system}.dwm;
-          st  = inputs.st.packages.${system}.st;       
         };
       };
     };

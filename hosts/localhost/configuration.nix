@@ -3,9 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
-  pkgs,
-  ...
-}: {
+  pkgs, ... }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -46,17 +44,31 @@
     extraGroups = ["wheel"]; 
     packages = with pkgs; [
       firefox
-      
+      discord
+      flatpak
+      nix-index
+      pulsemixer
+      bat
     ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    st
-    wget
-    curl
+    alacritty
     fish
+    tdrop
+    xclip
+    rofi
+    picom
+    openvpn
+    pamixer
+    killall
+    git
+    gh
+    cava
+    dash
+    nodejs # for neovim
   ];
   # NETWORKING
   boot.extraModulePackages = with config.boot.kernelPackages; [
