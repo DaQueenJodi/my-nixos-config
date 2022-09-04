@@ -81,8 +81,8 @@
   ];
 
   boot.kernelModules = ["r88x2bu"];
+  boot.kernelParams = ["mitigations=off"];
   networking.nameservers = ["1.1.1.1" "1.0.0.1" "8.8.8.8" "8.8.4.4"];
-  #networking.defaultGateway = "192.168.1.254";
   networking.wireless.iwd.enable = true;
   networking.hostName = "";
 
@@ -107,15 +107,8 @@
 
   services.flatpak.enable = true;
 
-
-
  # MODULE ENABLING
  modules.editor.neovim.enable = true;
-
-
-
-
-
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

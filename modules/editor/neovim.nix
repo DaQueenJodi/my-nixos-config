@@ -5,9 +5,9 @@
     ...
   }:
   with lib; let
-    cfg = config.modules.editors.neovim;
+    cfg = config.modules.editor.neovim;
   in {
-    options.modules.editors.neovim.enable = mkEnableOption "neovim";
+    options.modules.editor.neovim.enable = mkEnableOption "neovim";
 
     config = mkIf cfg.enable {
       environment.systemPackages =  with pkgs; [
