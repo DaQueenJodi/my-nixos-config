@@ -13,7 +13,8 @@
       environment.systemPackages =  with pkgs; [
           neovim
           nodejs
-          clang-tools
+          ripgrep # for the telescope plugin
+          fd # for the telescope plugin
         ];
     # make neovim the default editor
     environment.variables.EDITOR = mkOverride 900 "nvim";

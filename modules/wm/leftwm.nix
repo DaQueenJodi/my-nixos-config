@@ -2,13 +2,13 @@
   config,
   lib,
   pkgs,
-  dwm,
+  leftwm,
   ...
 }:
 with lib; let
-  cfg = config.modules.wm.dwm;
+  cfg = config.modules.wm.leftwm;
 in {
-  options.modules.wm.dwm.enable = mkEnableOption "dwm";
+  options.modules.wm.leftwm.enable = mkEnableOption "leftwm";
 
   config = mkMerge [
     {
@@ -22,16 +22,16 @@ in {
     (mkIf cfg.enable {
       services.xserver.windowManager.session = optionals cfg.enable [
         {
-          name = "dwm";
+          name = "leftwm";
           start = ''
-            ~/.on_start_dwm &
-            dwm &
+            ~/.on_start_leftwm &
+            leftwm &
             waitPID=$!
           '';
         }
       ];
 
-      users.users.jodi.packages = [dwm];
+      users.users.jodi.packages = [leftwm];
     })
   ];
 }

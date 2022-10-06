@@ -35,21 +35,21 @@
   hardware.bluetooth.enable = true;
   hardware.pulseaudio.support32Bit = config.hardware.pulseaudio.enable;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jodi = {
     isNormalUser = true;
-    extraGroups = ["wheel"]; 
+    extraGroups = ["wheel" "mlocate"]; 
     packages = with pkgs; [
       firefox
-      discord
       flatpak
       nix-index
       pulsemixer
       bat
       ranger
+      mlocate
+      wget
+      curl
+      #gamescope # micro-compositor to help with games running in wine/proton
     ];
   };
 
@@ -92,6 +92,7 @@
   # FONTS
   fonts.fonts = with pkgs; [
     noto-fonts
+    awesome
     liberation_ttf
     fira-code
     fira-code-symbols
@@ -107,8 +108,29 @@
 
   services.flatpak.enable = true;
 
+ # Make winit apps like alacritty or foot have the same scaling on both monitors
+ environment.variables.WINIT_X11_SCALE_FACTOR = "1";
+
+ # mlocate for file indexing
+ services.locate = {
+    enable = true;
+    locate = pkgs.mlocate;
+    interval = "hourly";
+    localuser = null;
+  };
+
  # MODULE ENABLING
  modules.editor.neovim.enable = true;
+ modules.gaming.steam.enable = true;
+
+
+ # SERVICES
+ services.openssh = {
+    enable = true;
+    gatewayPorts = "yes";
+  };
+ services.jellyfin.enable = true;
+ services.jellyfin.openFirewall = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
