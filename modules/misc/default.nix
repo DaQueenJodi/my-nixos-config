@@ -1,0 +1,6 @@
+{pkgs, ...}: {
+  imports = [
+    ./scripts.nix
+  ];
+}
+

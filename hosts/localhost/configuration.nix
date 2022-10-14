@@ -22,9 +22,7 @@
   # LICENSES
   nixpkgs.config.allowUnfree = true;
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  modules.wm.dwm.enable = true;
+  # Enable the X11 windowing system. services.xserver.enable = true; modules.wm.dwm.enable = true;
   
 
   # HARDWARE
@@ -49,6 +47,7 @@
       mlocate
       wget
       curl
+      github-cli
       #gamescope # micro-compositor to help with games running in wine/proton
     ];
   };
@@ -110,7 +109,6 @@
 
  # Make winit apps like alacritty or foot have the same scaling on both monitors
  environment.variables.WINIT_X11_SCALE_FACTOR = "1";
-
  # mlocate for file indexing
  services.locate = {
     enable = true;
@@ -122,6 +120,7 @@
  # MODULE ENABLING
  modules.editor.neovim.enable = true;
  modules.gaming.steam.enable = true;
+ modules.misc.scripts.enable = true;
 
 
  # SERVICES

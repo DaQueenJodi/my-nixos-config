@@ -4,5 +4,6 @@
     ./hardware
     ./wm
     ./editor
+    ./misc
   ];
 }

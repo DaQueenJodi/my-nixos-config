@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  leftwm,
   ...
 }:
 with lib; let
@@ -17,6 +16,7 @@ in {
         xclip
         trayer
         xfce.xfce4-clipman-plugin
+        polybar
       ];
     }
     (mkIf cfg.enable {
@@ -31,7 +31,7 @@ in {
         }
       ];
 
-      users.users.jodi.packages = [leftwm];
+      users.users.jodi.packages = [pkgs.leftwm];
     })
   ];
 }
