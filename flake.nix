@@ -26,7 +26,6 @@
         modules = [
           ./hosts/localhost/configuration.nix
           ./modules
-          ./packages
         ];
 
         specialArgs = {

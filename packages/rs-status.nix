@@ -8,7 +8,7 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "DaQueenJodi";
     repo = pname;
-    rev = version;
+    rev = "b94b143";
     hash = "";
   };
 
@@ -18,11 +18,4 @@ rustPlatform.buildRustPackage rec {
 
   buildInputs = [ libX11 libXcursor libxcb ];
 
-  # meta is optional, only needed when you want to PR it to nixpkgs
-  meta = with lib; {
-    description = "dwm status bar made in rust";
-    homepage = "https://github.com/DaQueenJodi/rs-status";
-    maintainers = with lib.maintainers; [ ];
-    license = licenses.yourLicense;
-  };
 }

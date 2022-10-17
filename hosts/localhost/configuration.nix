@@ -44,6 +44,8 @@
     packages = with pkgs; [
       qbittorrent
       godot
+      
+      (pkgs.callPackage ../../packages/rs-status.nix {})
 
       firefox
       flatpak
