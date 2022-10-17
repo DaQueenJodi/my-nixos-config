@@ -45,8 +45,6 @@
       qbittorrent
       godot
       
-      (pkgs.callPackage ../../packages/rs-status.nix {})
-
       firefox
       flatpak
       nix-index
