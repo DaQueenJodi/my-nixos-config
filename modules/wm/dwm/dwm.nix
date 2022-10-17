@@ -13,7 +13,7 @@ in {
   config = mkMerge [
     {
       users.users.jodi.packages = with pkgs; [
-        rs-status
+        (pkgs.callPackage ./rs-status.nix {})
         maim
         xclip
         trayer

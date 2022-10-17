@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ./dwm
-    ./leftwm.nix
+    ./dwm.nix
   ];
 }
