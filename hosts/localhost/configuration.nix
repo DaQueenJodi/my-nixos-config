@@ -22,8 +22,12 @@
   # LICENSES
   nixpkgs.config.allowUnfree = true;
 
-  # Enable the X11 windowing system. services.xserver.enable = true; modules.wm.dwm.enable = true;
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+  modules.wm.dwm.enable = true;
   
+  
+  services.xserver.xkbOptions = "caps";
 
   # HARDWARE
 
@@ -38,6 +42,9 @@
     isNormalUser = true;
     extraGroups = ["wheel" "mlocate"]; 
     packages = with pkgs; [
+      qbittorrent
+      godot
+
       firefox
       flatpak
       nix-index
@@ -47,7 +54,8 @@
       mlocate
       wget
       curl
-      github-cli
+      unzip
+      zip
       #gamescope # micro-compositor to help with games running in wine/proton
     ];
   };
@@ -109,6 +117,7 @@
 
  # Make winit apps like alacritty or foot have the same scaling on both monitors
  environment.variables.WINIT_X11_SCALE_FACTOR = "1";
+
  # mlocate for file indexing
  services.locate = {
     enable = true;
@@ -123,10 +132,12 @@
  modules.misc.scripts.enable = true;
 
 
+
+
+
  # SERVICES
  services.openssh = {
     enable = true;
-    gatewayPorts = "yes";
   };
  services.jellyfin.enable = true;
  services.jellyfin.openFirewall = true;

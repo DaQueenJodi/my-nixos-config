@@ -6,15 +6,17 @@
   ...
 }:
 with lib; let
-  cfg = config.modules.misc.scripts.enable = mkEnableOption "scripts";
+  cfg = config.modules.misc.scripts;
+in {
+  options.modules.misc.scripts.enable = mkEnableOption "scripts";
 
   config = mkMerge [
     (mkIf cfg.enable {
       users.users.jodi.packages = [ 
         (pkgs.writeShellScriptBin "screenshot" ''
-            #!/usr/bin/env bash
+            #!/bin/sh
             while getopts 'fs' OPTION; do
-            case "${OPTION}" in
+            case '$OPTION' in
               f)
                 MAIM_ARGS="-i $(xdotool getactivewindow)"
                 ;;
@@ -27,10 +29,11 @@ with lib; let
                 ;;
             esac
             done
-            shift "$(($OPTIND -1))"
-            maim --quality 10  ${MAIM_ARGS} | xclip -selection clipboard -t image/png
+            shift '$(($OPTIND -1))'
+            maim --quality 10  $MAIM_ARGS | xclip -selection clipboard -t image/png
           '')
       ];
     }
+    )
     ];
   }

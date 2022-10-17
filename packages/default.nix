@@ -1,0 +1,5 @@
+{pkgs, ...}: {
+  import = [
+    ./rs-status
+  ];
+}

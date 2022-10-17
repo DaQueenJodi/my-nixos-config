@@ -6,6 +6,7 @@
       url = "github:daqueenjodi/dwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rnix-lsp.url = "github:nix-community/rnix-lsp";
 
  };
 
@@ -25,6 +26,7 @@
         modules = [
           ./hosts/localhost/configuration.nix
           ./modules
+          ./packages
         ];
 
         specialArgs = {
