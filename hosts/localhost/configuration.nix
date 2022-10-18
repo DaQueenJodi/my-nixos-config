@@ -136,19 +136,16 @@
 
  # MODULE ENABLING
  modules.editor.neovim.enable = true;
+ modules.editor.emacs.enable = true;
  #modules.gaming.steam.enable = true; use flatpak instead
  modules.misc.scripts.enable = true;
 
-
-
-
-
  # SERVICES
- services.openssh = {
-    enable = true;
-  };
- services.jellyfin.enable = true;
- services.jellyfin.openFirewall = true;
+ services.openssh.enable = true;
+ services.jellyfin = {
+  enable = true;
+  openFirewall = true;
+ };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
