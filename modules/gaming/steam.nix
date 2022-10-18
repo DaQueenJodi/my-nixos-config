@@ -19,6 +19,12 @@ in {
         STEAM_EXTRA_COMPAT_TOOL_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
       };
       environment.variables.STEAMOS = mkOverride 900 "anything";
+
+      users.users.jodi.packages = with pkgs; [
+        protontricks
+        cabextract
+      ];
+
       };
 }
 

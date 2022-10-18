@@ -56,6 +56,14 @@
       curl
       unzip
       zip
+
+      mpv
+      
+
+      (pkgs.callPackage ../../packages/queercat.nix {} )
+
+
+
       #gamescope # micro-compositor to help with games running in wine/proton
     ];
   };
@@ -128,7 +136,7 @@
 
  # MODULE ENABLING
  modules.editor.neovim.enable = true;
- modules.gaming.steam.enable = true;
+ #modules.gaming.steam.enable = true; use flatpak instead
  modules.misc.scripts.enable = true;
 
 

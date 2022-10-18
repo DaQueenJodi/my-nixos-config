@@ -17,7 +17,6 @@
           fd # for the telescope plugin
           luaformatter # for formatting config
           sumneko-lua-language-server # for lsp support in configs
-          nil # nixos lsp
         ];
     # make neovim the default editor
     environment.variables.EDITOR = mkOverride 900 "nvim";
