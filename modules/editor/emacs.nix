@@ -7,7 +7,7 @@
 with lib; let
   cfg = config.modules.editor.emacs;
 in {
-  options.modules.editor.emacs = mkEnableOption "emacs";
+ options.modules.editor.emacs = mkEnableOption "emacs";
 
   config = mkIf cfg.enable {
 
@@ -26,4 +26,5 @@ in {
     ];
 
     services.emacs.enable = true;
-  }
+  };
+}

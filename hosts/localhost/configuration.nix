@@ -9,13 +9,7 @@
     ./hardware-configuration.nix
   ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
-  # Set your time zone.
-  time.timeZone = "America/Chicago";
+  # Use the systemd-boot EFI boot loader. boot.loader = { systemd-boot.enable = true; efi.canTouchEfiVariables = true; }; Set your time zone. time.timeZone = "America/Chicago";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -58,8 +52,6 @@
       zip
 
       mpv
-      
-
       (pkgs.callPackage ../../packages/queercat.nix {} )
 
 
@@ -136,7 +128,7 @@
 
  # MODULE ENABLING
  modules.editor.neovim.enable = true;
- modules.editor.emacs.enable = true;
+# modules.editor.emacs.enable = true;
  #modules.gaming.steam.enable = true; use flatpak instead
  modules.misc.scripts.enable = true;
 

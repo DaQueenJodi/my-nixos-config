@@ -7,10 +7,11 @@
   with lib; let
     cfg = config.modules.editor.neovim;
   in {
-    options.modules.editor.neovim.enable = mkEnableOption "neovim";
+    options.modules.editor.neovim = mkEnableOption "neovim";
 
     config = mkIf cfg.enable {
       environment.systemPackages =  with pkgs; [
+          nil
           neovim
           nodejs
           ripgrep # for the telescope plugin
