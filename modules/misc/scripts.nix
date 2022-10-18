@@ -12,26 +12,30 @@ in {
 
   config = mkMerge [
     (mkIf cfg.enable {
-      users.users.jodi.packages = [ 
+      users.users.jodi.packages = with pkgs; [ 
         (pkgs.writeShellScriptBin "screenshot" ''
-            #!/bin/sh
             while getopts 'fs' OPTION; do
-            case '$OPTION' in
-              f)
-                MAIM_ARGS="-i $(xdotool getactivewindow)"
-                ;;
-              s)
-                MAIM_ARGS="--select"
-                ;;
-              ?)
-                echo "usage: screenshot [-s] [-f]" >&2
-                exit 1
-                ;;
-            esac
+              case '$OPTION' in
+                f)
+                  MAIM_ARGS="-i $(xdotool getactivewindow)"
+                  ;;
+                s)
+                  MAIM_ARGS="--select"
+                  ;;
+                ?)
+                  echo "usage: screenshot [-s] [-f]" >&2
+                  exit 1
+                  ;;
+              esac
             done
-            shift '$(($OPTIND -1))'
+            shift "$(($OPTIND -1))"
+            
             maim --quality 10  $MAIM_ARGS | xclip -selection clipboard -t image/png
           '')
+        # deps
+        xdotool
+        maim 
+        xclip
       ];
     }
     )

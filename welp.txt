@@ -1,0 +1,261 @@
+execve("/etc/profiles/per-user/jodi/bin/screenshot", ["screenshot", "-s"], 0x7ffdb6103590 /* 60 vars */) = 0
+brk(NULL)                               = 0x2254000
+access("/etc/ld-nix.so.preload", R_OK)  = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/glibc-hwcaps/x86-64-v3/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/glibc-hwcaps/x86-64-v3", 0x7ffea47ba890, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/glibc-hwcaps/x86-64-v2/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/glibc-hwcaps/x86-64-v2", 0x7ffea47ba890, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/tls/haswell/x86_64/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/tls/haswell/x86_64", 0x7ffea47ba890, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/tls/haswell/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/tls/haswell", 0x7ffea47ba890, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/tls/x86_64/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/tls/x86_64", 0x7ffea47ba890, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/tls/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/tls", 0x7ffea47ba890, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/haswell/x86_64/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/haswell/x86_64", 0x7ffea47ba890, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/haswell/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/haswell", 0x7ffea47ba890, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/x86_64/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/x86_64", 0x7ffea47ba890, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0555, st_size=15616, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe2cd632000
+mmap(NULL, 16400, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe2cd62d000
+mmap(0x7fe2cd62e000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fe2cd62e000
+mmap(0x7fe2cd62f000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fe2cd62f000
+mmap(0x7fe2cd630000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fe2cd630000
+close(3)                                = 0
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\224\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\200\0\300\4\0\0\0\1\0\0\0\0\0\0\0", 32, 848) = 32
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\270\225[\26p7\342\261\20\337\221\255\3663\200*"..., 68, 880) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0555, st_size=2350008, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2088016, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe2cd42f000
+mmap(0x7fe2cd457000, 1482752, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fe2cd457000
+mmap(0x7fe2cd5c1000, 364544, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x192000) = 0x7fe2cd5c1000
+mmap(0x7fe2cd61a000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ea000) = 0x7fe2cd61a000
+mmap(0x7fe2cd620000, 52304, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe2cd620000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe2cd42c000
+arch_prctl(ARCH_SET_FS, 0x7fe2cd42c740) = 0
+set_tid_address(0x7fe2cd42ca10)         = 514960
+set_robust_list(0x7fe2cd42ca20, 24)     = 0
+mprotect(0x7fe2cd61a000, 16384, PROT_READ) = 0
+mprotect(0x7fe2cd630000, 4096, PROT_READ) = 0
+mprotect(0x4d5000, 8192, PROT_READ)     = 0
+mprotect(0x7fe2cd664000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+openat(AT_FDCWD, "/dev/tty", O_RDWR|O_NONBLOCK) = 3
+close(3)                                = 0
+brk(NULL)                               = 0x2254000
+brk(0x2255000)                          = 0x2255000
+openat(AT_FDCWD, "/run/current-system/sw/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0444, st_size=225226832, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 225226832, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe2bfd60000
+close(3)                                = 0
+brk(0x2256000)                          = 0x2256000
+brk(0x2257000)                          = 0x2257000
+brk(0x2258000)                          = 0x2258000
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/gconv/gconv-modules.cache", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/gconv/gconv-modules", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0444, st_size=3808, ...}, AT_EMPTY_PATH) = 0
+brk(0x225a000)                          = 0x225a000
+read(3, "# GNU libc iconv configuration.\n"..., 4096) = 3808
+brk(0x225b000)                          = 0x225b000
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/gconv/gconv-modules.d", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0555, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+brk(0x226b000)                          = 0x226b000
+getdents64(3, 0x225b040 /* 3 entries */, 32768) = 96
+openat(AT_FDCWD, "/nix/store/lxpdbaazqd2s79jx6lngr8nak2rjdaq1-glibc-2.34-210/lib/gconv/gconv-modules.d/gconv-modules-extra.conf", O_RDONLY|O_CLOEXEC) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0444, st_size=53974, ...}, AT_EMPTY_PATH) = 0
+read(4, "# GNU libc iconv configuration.\n"..., 4096) = 4096
+brk(0x226c000)                          = 0x226c000
+brk(0x226d000)                          = 0x226d000
+brk(0x226e000)                          = 0x226e000
+read(4, "B1002//\tJUS_I.B1.002//\nmodule\tJU"..., 4096) = 4096
+brk(0x226f000)                          = 0x226f000
+brk(0x2270000)                          = 0x2270000
+brk(0x2271000)                          = 0x2271000
+brk(0x2272000)                          = 0x2272000
+brk(0x2273000)                          = 0x2273000
+read(4, "59-5//\nalias\tISO_8859-5//\t\tISO-8"..., 4096) = 4096
+brk(0x2274000)                          = 0x2274000
+brk(0x2275000)                          = 0x2275000
+brk(0x2276000)                          = 0x2276000
+brk(0x2277000)                          = 0x2277000
+brk(0x2278000)                          = 0x2278000
+read(4, "59-16//\t\tINTERNAL\t\tISO8859-16\t1\n"..., 4096) = 4096
+brk(0x2279000)                          = 0x2279000
+brk(0x227a000)                          = 0x227a000
+brk(0x227b000)                          = 0x227b000
+brk(0x227c000)                          = 0x227c000
+read(4, "-SE-A\t1\nmodule\tINTERNAL\t\tEBCDIC-"..., 4096) = 4096
+brk(0x227d000)                          = 0x227d000
+brk(0x227e000)                          = 0x227e000
+brk(0x227f000)                          = 0x227f000
+brk(0x2280000)                          = 0x2280000
+brk(0x2281000)                          = 0x2281000
+read(4, "97\t\t1\n\n#\tfrom\t\t\tto\t\t\tmodule\t\tcos"..., 4096) = 4096
+brk(0x2282000)                          = 0x2282000
+brk(0x2283000)                          = 0x2283000
+brk(0x2284000)                          = 0x2284000
+brk(0x2285000)                          = 0x2285000
+read(4, "1\n\n#\tfrom\t\t\tto\t\t\tmodule\t\tcost\nal"..., 4096) = 4096
+brk(0x2286000)                          = 0x2286000
+brk(0x2287000)                          = 0x2287000
+brk(0x2288000)                          = 0x2288000
+brk(0x2289000)                          = 0x2289000
+brk(0x228a000)                          = 0x228a000
+read(4, "6//\t\tIBM1046//\nalias\tCP1046//\t\tI"..., 4096) = 4096
+brk(0x228b000)                          = 0x228b000
+brk(0x228c000)                          = 0x228c000
+brk(0x228d000)                          = 0x228d000
+brk(0x228e000)                          = 0x228e000
+brk(0x228f000)                          = 0x228f000
+read(4, "\tto\t\t\tmodule\t\tcost\nalias\tRUSCII/"..., 4096) = 4096
+brk(0x2290000)                          = 0x2290000
+brk(0x2291000)                          = 0x2291000
+brk(0x2292000)                          = 0x2292000
+brk(0x2293000)                          = 0x2293000
+brk(0x2294000)                          = 0x2294000
+read(4, "03//\nmodule\tCSN_369103//\t\tINTERN"..., 4096) = 4096
+brk(0x2295000)                          = 0x2295000
+brk(0x2296000)                          = 0x2296000
+brk(0x2297000)                          = 0x2297000
+brk(0x2298000)                          = 0x2298000
+read(4, "\tmodule\t\tcost\nalias\tISO-IR-8-1//"..., 4096) = 4096
+brk(0x2299000)                          = 0x2299000
+brk(0x229a000)                          = 0x229a000
+brk(0x229b000)                          = 0x229b000
+brk(0x229c000)                          = 0x229c000
+brk(0x229d000)                          = 0x229d000
+read(4, "IBM1156\t\t1\n\n#\tfrom\t\t\tto\t\t\tmodule"..., 4096) = 4096
+brk(0x229e000)                          = 0x229e000
+brk(0x229f000)                          = 0x229f000
+brk(0x22a0000)                          = 0x22a0000
+brk(0x22a1000)                          = 0x22a1000
+brk(0x22a2000)                          = 0x22a2000
+read(4, "\t\tIBM1166//\nalias\tCP1166//\t\tIBM1"..., 4096) = 4096
+brk(0x22a3000)                          = 0x22a3000
+brk(0x22a4000)                          = 0x22a4000
+brk(0x22a5000)                          = 0x22a5000
+brk(0x22a6000)                          = 0x22a6000
+brk(0x22a7000)                          = 0x22a7000
+read(4, "alias\tROMAN9//\t\tHP-ROMAN9//\nalia"..., 4096) = 726
+read(4, "", 4096)                       = 0
+close(4)                                = 0
+getdents64(3, 0x225b040 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+futex(0x7fe2cd61f88c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+getuid()                                = 1000
+getgid()                                = 100
+geteuid()                               = 1000
+getegid()                               = 100
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+ioctl(-1, TIOCGPGRP, 0x7ffea47bb54c)    = -1 EBADF (Bad file descriptor)
+brk(0x22a8000)                          = 0x22a8000
+sysinfo({uptime=122965, loads=[41888, 37920, 38720], totalram=16679350272, freeram=2591535104, sharedram=160952320, bufferram=2617167872, totalswap=4000313344, freeswap=4000313344, procs=847, totalhigh=0, freehigh=0, mem_unit=1}) = 0
+brk(0x22a9000)                          = 0x22a9000
+rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe2cd46c0e0}, 8) = 0
+rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, 8) = 0
+rt_sigaction(SIGTSTP, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGTSTP, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, 8) = 0
+rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, 8) = 0
+rt_sigaction(SIGTTOU, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGTTOU, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, 8) = 0
+uname({sysname="Linux", nodename="localhost", ...}) = 0
+brk(0x22ad000)                          = 0x22ad000
+brk(0x22af000)                          = 0x22af000
+brk(0x22b1000)                          = 0x22b1000
+brk(0x22b2000)                          = 0x22b2000
+brk(0x22b3000)                          = 0x22b3000
+brk(0x22b4000)                          = 0x22b4000
+newfstatat(AT_FDCWD, "/home/jodi/nix/nixos", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, ".", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home/jodi", {st_mode=S_IFDIR|0700, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home/jodi/nix", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home/jodi/nix/nixos", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home/jodi", {st_mode=S_IFDIR|0700, st_size=4096, ...}, 0) = 0
+getpid()                                = 514960
+getppid()                               = 514957
+getpid()                                = 514960
+getppid()                               = 514957
+getpid()                                = 514960
+getppid()                               = 514957
+brk(0x22b8000)                          = 0x22b8000
+brk(0x22bc000)                          = 0x22bc000
+getpgrp()                               = 514957
+ioctl(2, TIOCGPGRP, [514957])           = 0
+rt_sigaction(SIGCHLD, {sa_handler=0x44a480, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fe2cd46c0e0}, 8) = 0
+prlimit64(0, RLIMIT_NPROC, NULL, {rlim_cur=63546, rlim_max=63546}) = 0
+brk(0x22bd000)                          = 0x22bd000
+brk(0x22be000)                          = 0x22be000
+brk(0x22bf000)                          = 0x22bf000
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+brk(0x22c0000)                          = 0x22c0000
+brk(0x22c1000)                          = 0x22c1000
+openat(AT_FDCWD, "/etc/profiles/per-user/jodi/bin/screenshot", O_RDONLY) = 3
+newfstatat(AT_FDCWD, "/etc/profiles/per-user/jodi/bin/screenshot", {st_mode=S_IFREG|0555, st_size=409, ...}, 0) = 0
+ioctl(3, TCGETS, 0x7ffea47bb4f0)        = -1 ENOTTY (Inappropriate ioctl for device)
+lseek(3, 0, SEEK_CUR)                   = 0
+read(3, "#!/nix/store/xbdqbi2mscmhl5wcpbg"..., 80) = 80
+lseek(3, 0, SEEK_SET)                   = 0
+prlimit64(0, RLIMIT_NOFILE, NULL, {rlim_cur=1024, rlim_max=512*1024}) = 0
+fcntl(255, F_GETFD)                     = -1 EBADF (Bad file descriptor)
+dup2(3, 255)                            = 255
+close(3)                                = 0
+fcntl(255, F_SETFD, FD_CLOEXEC)         = 0
+fcntl(255, F_GETFL)                     = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+newfstatat(255, "", {st_mode=S_IFREG|0555, st_size=409, ...}, AT_EMPTY_PATH) = 0
+lseek(255, 0, SEEK_CUR)                 = 0
+brk(0x22c2000)                          = 0x22c2000
+read(255, "#!/nix/store/xbdqbi2mscmhl5wcpbg"..., 409) = 409
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+pipe([3, 4])                            = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [CHLD], 8) = 0
+rt_sigprocmask(SIG_BLOCK, [INT TERM CHLD], [CHLD], 8) = 0
+lseek(255, -1, SEEK_CUR)                = 408
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fe2cd42ca10) = 514961
+rt_sigprocmask(SIG_SETMASK, [CHLD], NULL, 8) = 0
+close(4)                                = 0
+close(4)                                = -1 EBADF (Bad file descriptor)
+rt_sigprocmask(SIG_BLOCK, NULL, [CHLD], 8) = 0
+rt_sigprocmask(SIG_BLOCK, [INT TERM CHLD], [CHLD], 8) = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fe2cd42ca10) = 514962
+rt_sigprocmask(SIG_SETMASK, [CHLD], NULL, 8) = 0
+close(3)                                = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [CHLD], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [CHLD], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [CHLD], 8) = 0
+rt_sigaction(SIGINT, {sa_handler=0x4476b0, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, 8) = 0
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 514961
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 514962
+rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, {sa_handler=0x4476b0, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fe2cd46c0e0}, 8) = 0
+ioctl(2, TIOCGWINSZ, {ws_row=55, ws_col=191, ws_xpixel=1910, ws_ypixel=1051}) = 0
+rt_sigprocmask(SIG_SETMASK, [CHLD], NULL, 8) = 0
+close(3)                                = -1 EBADF (Bad file descriptor)
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=514961, si_uid=1000, si_status=0, si_utime=218 /* 2.18 s */, si_stime=2 /* 0.02 s */} ---
+wait4(-1, 0x7ffea47babd0, WNOHANG, NULL) = -1 ECHILD (No child processes)
+rt_sigreturn({mask=[]})                 = 0
+read(255, "\n", 409)                    = 1
+read(255, "", 409)                      = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+exit_group(0)                           = ?
++++ exited with 0 +++

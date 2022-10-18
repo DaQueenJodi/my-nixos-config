@@ -6,8 +6,6 @@
       url = "github:daqueenjodi/dwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    rnix-lsp.url = "github:nix-community/rnix-lsp";
-
  };
 
 

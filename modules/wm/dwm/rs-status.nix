@@ -9,10 +9,10 @@ rustPlatform.buildRustPackage rec {
     owner = "DaQueenJodi";
     repo = pname;
     rev = "b94b143";
-    hash = "";
+    hash = "sha256-lBZo8g4WoDGwXOh+9vSrnxQqXSJ5rG/2+YyyPpOJGOg=";
   };
 
-  cargoSha256 = "";
+  cargoSha256 = "sha256-ycKUAK17qCtLuvna0MiK7Iqm91VINj5MKuDq8XXj/gQ=";
 
   nativeBuildInputs = [ pkg-config ];
 
