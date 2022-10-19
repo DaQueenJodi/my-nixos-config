@@ -14,22 +14,14 @@ in {
     (mkIf cfg.enable {
       users.users.jodi.packages = with pkgs; [ 
         (pkgs.writeShellScriptBin "screenshot" ''
-            while getopts 'fs' OPTION; do
-              case '$OPTION' in
-                f)
-                  MAIM_ARGS="-i $(xdotool getactivewindow)"
-                  ;;
-                s)
-                  MAIM_ARGS="--select"
-                  ;;
-                ?)
-                  echo "usage: screenshot [-s] [-f]" >&2
-                  exit 1
-                  ;;
-              esac
-            done
-            shift "$(($OPTIND -1))"
-            
+          if [ "$1" = "select" ]; then
+            MAIM_ARGS="--select"
+          elif [ "$1" = "fullscreen" ]; then
+            MAIM_ARGS="-i $(xdotool getactivewindow)"
+          else
+            echo "specify either 'select' or 'fullscreen'"
+            exit 1
+          fi
             maim --quality 10  $MAIM_ARGS | xclip -selection clipboard -t image/png
           '')
         # deps

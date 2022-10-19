@@ -9,7 +9,13 @@
     ./hardware-configuration.nix
   ];
 
-  # Use the systemd-boot EFI boot loader. boot.loader = { systemd-boot.enable = true; efi.canTouchEfiVariables = true; }; Set your time zone. time.timeZone = "America/Chicago";
+  # Use the systemd-boot EFI boot loader.
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
+  # Set your time zone.
+  time.timeZone = "America/Chicago";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -17,11 +23,13 @@
   nixpkgs.config.allowUnfree = true;
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+    xkbOptions = "ctrl:caps";
+  };
   modules.wm.dwm.enable = true;
   
   
-  services.xserver.xkbOptions = "caps";
 
   # HARDWARE
 
@@ -52,6 +60,8 @@
       zip
 
       mpv
+      
+
       (pkgs.callPackage ../../packages/queercat.nix {} )
 
 
@@ -128,11 +138,14 @@
 
  # MODULE ENABLING
  modules.editor.neovim.enable = true;
-# modules.editor.emacs.enable = true;
+ modules.editor.lsp.enable = true;
+ modules.editor.emacs.enable = true;
  #modules.gaming.steam.enable = true; use flatpak instead
  modules.misc.scripts.enable = true;
 
+
  # SERVICES
+ services.emacs.enable = true;
  services.openssh.enable = true;
  services.jellyfin = {
   enable = true;
