@@ -6,6 +6,11 @@
       url = "github:daqueenjodi/dwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
  };
 
 
@@ -24,6 +29,7 @@
         modules = [
           ./hosts/localhost/configuration.nix
           ./modules
+          inputs.hyprland.nixosModules.default
         ];
 
         specialArgs = {

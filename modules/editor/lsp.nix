@@ -1,5 +1,5 @@
 {
-  libs,
+  lib,
   pkgs,
   config,
   ...
@@ -10,7 +10,7 @@ in {
   options.modules.editor.lsp.enable = mkEnableOption "lsp";
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs;
+    environment.systemPackages = with pkgs; [
       # LSP
       clang-tools
       sumneko-lua-language-server
@@ -19,5 +19,6 @@ in {
       # FORMATTERS
       luaformatter
       rustfmt
-  }
+    ];
+  };
 }

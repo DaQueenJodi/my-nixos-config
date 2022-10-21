@@ -21,16 +21,20 @@
   i18n.defaultLocale = "en_US.UTF-8";
   # LICENSES
   nixpkgs.config.allowUnfree = true;
-
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    xkbOptions = "ctrl:caps";
+    xkbOptions = "ctrl:nocaps";
   };
-  modules.wm.dwm.enable = true;
-  
+  security.sudo = {
+    enable = true;
+    extraConfig = ''
+    Defaults pwfeedback
+    '';
+  };
   
 
+  modules.wm.dwm.enable = true;
   # HARDWARE
 
   # AUDIO
@@ -142,7 +146,7 @@
  modules.editor.emacs.enable = true;
  #modules.gaming.steam.enable = true; use flatpak instead
  modules.misc.scripts.enable = true;
-
+ 
 
  # SERVICES
  services.emacs.enable = true;
