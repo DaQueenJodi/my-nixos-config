@@ -34,7 +34,7 @@
   };
   
 
-  modules.wm.dwm.enable = true;
+  modules.wm.dwl.enable = true;
   # HARDWARE
 
   # AUDIO

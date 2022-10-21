@@ -6,6 +6,10 @@
       url = "github:daqueenjodi/dwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dwl = {
+      url = "github:daqueenjodi/dwl";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
@@ -36,6 +40,7 @@
           inherit inputs;
 
           dwm = inputs.dwm.packages.${system}.dwm;
+          dwl = inputs.dwl.packages.${system}.dwl;
         };
       };
     };
