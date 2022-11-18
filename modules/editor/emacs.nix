@@ -8,7 +8,6 @@ with lib; let
   cfg = config.modules.editor.emacs;
 in {
  options.modules.editor.emacs.enable = mkEnableOption "emacs";
-
   config = mkIf cfg.enable {
 
   services.emacs.package = pkgs.emacsPgtkNativeComp;
@@ -23,6 +22,7 @@ in {
 
     environment.systemPackages = with pkgs; [
       emacsPgtkNativeComp
+      gnutls # needed or else you get package syncing issues
     ];
 
     services.emacs.enable = true;

@@ -32,9 +32,12 @@
     Defaults pwfeedback
     '';
   };
-  
 
-  modules.wm.dwl.enable = true;
+  services.xserver.displayManager.lightdm = {
+#    enable = true;
+  };  
+
+  modules.wm.awesome.enable = true;
   # HARDWARE
 
   # AUDIO
@@ -43,6 +46,20 @@
   hardware.bluetooth.enable = true;
   hardware.pulseaudio.support32Bit = config.hardware.pulseaudio.enable;
 
+
+ /* virtualisation.virtualbox = {
+    host = {
+      enable = true;
+      enableExtensionPack = true;
+    };
+    guest = {
+      enable = true;
+      x11 = true;
+    };
+  };
+  users.extraGroups.vboxusers.members = [ "jodi" ];
+  */
+  
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jodi = {
     isNormalUser = true;
@@ -51,7 +68,7 @@
       qbittorrent
       godot
       
-      firefox
+      firefox-wayland
       flatpak
       nix-index
       pulsemixer
@@ -62,13 +79,11 @@
       curl
       unzip
       zip
-
       mpv
-      
 
       (pkgs.callPackage ../../packages/queercat.nix {} )
 
-
+      clang
 
       #gamescope # micro-compositor to help with games running in wine/proton
     ];
@@ -78,17 +93,21 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     alacritty # terminal
-    tdrop # terminal dropdown
-    xclip # clipboard
-    rofi # launcher
-    picom # compositor
     openvpn # vpn stuffs
-    pamixer # changing volume
     killall # killing windows
-    git 
-    cava # for bar
-    dash # for launchers
-  ];
+    git
+
+    # https://github.com/nix-community/nix-direnv
+    direnv
+    nix-direnv
+   ];
+    nix.extraOptions = ''
+     keep-outputs = true
+     keep-derivations = true
+   '';
+    environment.pathsToLink = [
+     "/share/nix-direnv"
+    ];
   # NETWORKING
   boot.extraModulePackages = with config.boot.kernelPackages; [
     (rtl88x2bu.overrideAttrs (old: {
@@ -117,6 +136,8 @@
     liberation_ttf
     fira-code
     fira-code-symbols
+    cantarell-fonts
+    nerdfonts
   ];
 
   # FLATPAK
@@ -143,7 +164,7 @@
  # MODULE ENABLING
  modules.editor.neovim.enable = true;
  modules.editor.lsp.enable = true;
- modules.editor.emacs.enable = true;
+ # modules.editor.emacs.enable = true;
  #modules.gaming.steam.enable = true; use flatpak instead
  modules.misc.scripts.enable = true;
  

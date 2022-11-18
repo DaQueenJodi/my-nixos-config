@@ -16,8 +16,10 @@ in {
         (pkgs.callPackage ./rs-status.nix {})
         maim
         xclip
-        trayer
+        rofi
+        picom
         xfce.xfce4-clipman-plugin
+        pamixer
       ];
     }
     (mkIf cfg.enable {

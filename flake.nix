@@ -1,21 +1,23 @@
 {
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-22.05";
 
     dwm = {
       url = "github:daqueenjodi/dwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
     dwl = {
       url = "github:daqueenjodi/dwl";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixos-unstable.url = "nixpkgs/nixos-unstable";
+    #hyprland = {
+    #  url = "github:hyprwm/Hyprland";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
  };
 
 
@@ -34,14 +36,15 @@
         modules = [
           ./hosts/localhost/configuration.nix
           ./modules
-          inputs.hyprland.nixosModules.default
+#          inputs.hyprland.nixosModules.default
         ];
 
         specialArgs = {
           inherit inputs;
-
+          pkgs-unstable = inputs.nixos-unstable.legacyPackages.${system};
           dwm = inputs.dwm.packages.${system}.dwm;
           dwl = inputs.dwl.packages.${system}.dwl;
+          rs-status = inputs.rs-status.packages.${system}.dwl;
         };
       };
     };

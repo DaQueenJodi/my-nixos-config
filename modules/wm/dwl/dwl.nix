@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  dwl,
   ...
 }:
 with lib; let
@@ -13,15 +14,17 @@ in {
     {
       users.users.jodi.packages = with pkgs; [
         (pkgs.callPackage ./somebar.nix{})
+        (pkgs.callPackage ../dwm/rs-status.nix{})
         wl-clipboard
-        slurp
-        grim
+        fuzzel # app launcher
       ];
     }
     (mkIf cfg.enable {
+      services.xserver.displayManager.startx.enable = true; # disable display manager
       services.xserver.windowManager.session = optionals cfg.enable [
         {
           name = "dwl";
+          manage = "window";
           start = ''
             ~/.on_start_dwl &
             dwl &

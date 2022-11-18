@@ -28,6 +28,18 @@ in {
         xdotool
         maim 
         xclip
+
+
+        (pkgs.writeShellScriptBin "wlscreenshot" ''
+            if [ "$1" = "select" ]; then
+              grim -g "$(slurp -d)" - | wl-copy
+            elif [ "$1" = "fullscreen" ]; then
+              grim - | wl-copy
+            fi                     
+        '')
+        grim
+        slurp
+        wl-clipboard
       ];
     }
     )
