@@ -1,9 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  config,
-  pkgs, ... }: {
+{ config, pkgs, ... }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -29,15 +27,20 @@
   security.sudo = {
     enable = true;
     extraConfig = ''
-    Defaults pwfeedback
+      Defaults pwfeedback
     '';
   };
 
-  services.xserver.displayManager.lightdm = {
-#    enable = true;
-  };  
-
-  modules.wm.awesome.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  
+  # modules.wm.dwm.enable = true;
+  # services.xserver.windowManager.ratpoison.enable = true;
+  # services.xserver.windowManager.stumpwm.enable = true;
+  /* services.xserver.windowManager.i3 = {
+       enable = true;
+       package = pkgs.i3-gaps;
+     };
+  */
   # HARDWARE
 
   # AUDIO
@@ -46,31 +49,27 @@
   hardware.bluetooth.enable = true;
   hardware.pulseaudio.support32Bit = config.hardware.pulseaudio.enable;
 
-
- /* virtualisation.virtualbox = {
-    host = {
-      enable = true;
-      enableExtensionPack = true;
-    };
-    guest = {
-      enable = true;
-      x11 = true;
-    };
-  };
-  users.extraGroups.vboxusers.members = [ "jodi" ];
+  /* virtualisation.virtualbox = {
+       host = {
+         enable = true;
+         enableExtensionPack = true;
+       };
+       guest = {
+         enable = true;
+         x11 = true;
+       };
+     };
+     users.extraGroups.vboxusers.members = [ "jodi" ];
   */
-  
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jodi = {
     isNormalUser = true;
-    extraGroups = ["wheel" "mlocate"]; 
+    extraGroups = [ "wheel" "mlocate" ];
     packages = with pkgs; [
       qbittorrent
       godot
-      
-      firefox-wayland
-      flatpak
-      nix-index
+
       pulsemixer
       bat
       ranger
@@ -81,7 +80,7 @@
       zip
       mpv
 
-      (pkgs.callPackage ../../packages/queercat.nix {} )
+      (pkgs.callPackage ../../packages/queercat.nix { })
 
       clang
 
@@ -89,40 +88,47 @@
     ];
   };
 
+  users.users.aaron = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    flatpak
+    nix-index
     alacritty # terminal
     openvpn # vpn stuffs
     killall # killing windows
     git
 
+    firefox
     # https://github.com/nix-community/nix-direnv
     direnv
     nix-direnv
-   ];
-    nix.extraOptions = ''
-     keep-outputs = true
-     keep-derivations = true
-   '';
-    environment.pathsToLink = [
-     "/share/nix-direnv"
-    ];
-  # NETWORKING
-  boot.extraModulePackages = with config.boot.kernelPackages; [
-    (rtl88x2bu.overrideAttrs (old: {
-      src = pkgs.fetchFromGitHub {
-        owner = "RinCat";
-        repo = "RTL88x2BU-Linux-Driver";
-        rev = "624f131210b3f174342a79e971d980de79ce8ffd";
-        hash = "sha256-/IHVObNDa5+ihOOctsO3/X+/4csjWwmStckTJOqLg2E=";
-      };
-    }))
   ];
+  nix.extraOptions = ''
+    keep-outputs = true
+    keep-derivations = true
+  '';
+  environment.pathsToLink = [ "/share/nix-direnv" ];
+  # NETWORKING
+  boot.extraModulePackages = with config.boot.kernelPackages;
+    [
+      (rtl88x2bu.overrideAttrs (old: {
+        src = pkgs.fetchFromGitHub {
+          owner = "RinCat";
+          repo = "RTL88x2BU-Linux-Driver";
+          rev = "624f131210b3f174342a79e971d980de79ce8ffd";
+          hash = "sha256-/IHVObNDa5+ihOOctsO3/X+/4csjWwmStckTJOqLg2E=";
+        };
+      }))
+    ];
 
-  boot.kernelModules = ["r88x2bu"];
-  boot.kernelParams = ["mitigations=off"];
-  networking.nameservers = ["1.1.1.1" "1.0.0.1" "8.8.8.8" "8.8.4.4"];
+  boot.kernelModules = [ "r88x2bu" ];
+  boot.kernelParams = [ "mitigations=off" ];
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1" "8.8.8.8" "8.8.4.4" ];
   networking.wireless.iwd.enable = true;
   networking.hostName = "";
 
@@ -143,39 +149,36 @@
   # FLATPAK
   xdg.portal = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   services.flatpak.enable = true;
 
- # Make winit apps like alacritty or foot have the same scaling on both monitors
- environment.variables.WINIT_X11_SCALE_FACTOR = "1";
+  # Make winit apps like alacritty or foot have the same scaling on both monitors
+  environment.variables.WINIT_X11_SCALE_FACTOR = "1";
 
- # mlocate for file indexing
- services.locate = {
+  # mlocate for file indexing
+  services.locate = {
     enable = true;
     locate = pkgs.mlocate;
     interval = "hourly";
     localuser = null;
   };
 
- # MODULE ENABLING
- modules.editor.neovim.enable = true;
- modules.editor.lsp.enable = true;
- # modules.editor.emacs.enable = true;
- #modules.gaming.steam.enable = true; use flatpak instead
- modules.misc.scripts.enable = true;
- 
+  # MODULE ENABLING
+  modules.editor.neovim.enable = true;
+  modules.editor.lsp.enable = true;
+  # modules.editor.emacs.enable = true;
+  #modules.gaming.steam.enable = true; use flatpak instead
+  modules.misc.scripts.enable = true;
 
- # SERVICES
- services.emacs.enable = true;
- services.openssh.enable = true;
- services.jellyfin = {
-  enable = true;
-  openFirewall = true;
- };
+  # SERVICES
+  services.emacs.enable = true;
+  services.openssh.enable = true;
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+  };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

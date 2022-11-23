@@ -8,16 +8,17 @@ in {
 
   config = mkMerge [
     {
-      users.users.jodi.packages = with pkg; [
+      users.users.jodi.packages = with pkgs; [
         maim
         xclip
-        xfce4.xfce4-clipman-plugin
+        xfce.xfce4-clipman-plugin
         picom
         polybar
       ];
     }
     (mkIf cfg.enable {
-      windowManager.awesome = {
+
+      services.xserver.windowManager.awesome = {
         enable = true;
         luaModules = with pkgs.luaPackages;
           [

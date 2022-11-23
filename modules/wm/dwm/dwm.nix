@@ -12,7 +12,7 @@ in {
 
   config = mkMerge [
     {
-      users.users.jodi.packages = with pkgs; [
+      environment.systemPackages = with pkgs; [
         (pkgs.callPackage ./rs-status.nix {})
         maim
         xclip
@@ -34,7 +34,7 @@ in {
         }
       ];
 
-      users.users.jodi.packages = [dwm];
+      environment.systemPackages = [dwm];
     })
   ];
 }
